@@ -1,0 +1,47 @@
+def Y(a,b):
+  result = a + b
+  return result
+print(Y(3,4))
+#출력 : 7
+---------------------------------------
+def hello_world():
+  print("Hello World!")
+hello_world()
+#출력 : Hello World!
+---------------------------------------
+def name_and_age():
+  name = input("이름을 입력하세요:")
+  age = input ("나이를 입력하세요 :")
+  return name, age
+result = name_and_age()
+print(result)
+#출력 : ('Alice', '20') 
+---------------------------------------
+def factorial(n):
+  if n == 1:
+    return 1
+  else:
+    return n * factorial(n-1)
+result = factorial(5)
+print(result)
+#출력 : 120
+---------------------------------------
+count = 0
+def increment():
+  global count       #global 키워드 사용 전역 변수(Global Variable)를 참조) 
+  count += 1
+increment()
+increment()
+increment()
+print(count)
+--------------------------------------
+내장 함수
+print(abs(-3) 
+#출력 : 3
+print(len("hello"))
+#출력 : 5
+print(str(123))
+# 출력 : "123"   #문자열 변환
+--------------------------------------
+
+
