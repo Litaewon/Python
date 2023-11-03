@@ -1,4 +1,15 @@
 def Y(a,b):
+  return a + b
+print(Y(3,4))
+# 출력 : 7
+
+or
+
+Y = lambda a, b: a + b
+print(Y(3,4))
+# 출력 : 7
+--------------------------------------
+def Y(a,b):
   result = a + b
   return result
 print(Y(3,4))
