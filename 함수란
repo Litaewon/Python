@@ -49,15 +49,6 @@ result = factorial(5)
 print(result)
 #출력 : 120
 ---------------------------------------
-# 가변인자
-def sum_numbers(*args):
-  total = 0
-  for number in args:
-    total += number
-  return total
-result = sum_numbers(1, 2, 3, 4, 5)
-print(result)
----------------------------------------
 count = 0
 def increment():
   global count       #global 키워드 사용 전역 변수(Global Variable)를 참조) 
@@ -75,5 +66,29 @@ print(len("hello"))
 print(str(123))
 # 출력 : "123"   #문자열 변환
 --------------------------------------
+# 가변인자
+def sum_numbers(*args):   #args(arguments): 튜플(순서대로) 위치 인수  ### * 를 사용하여 함수에 임의의 개수의 위치 인수를 전달.
+  total = 0
+  for number in args:
+    total += number
+  return total
+result = sum_numbers(1, 2, 3, 4, 5)
+print(result)
 
+def print_info(**kwargs):  #kwarge(keyword arguments) 키워드 함수 ### ** 를 사용하여 키와 값의 쌈을 함수에 전달
+  for key, value in kwargs.items():
+    print(f"{key}: {value}")
+print_info(name="김철수", age = 30, city = "서울")
+#출력 : name : 김철수 age : 30 city : 서울
+
+def profile(title, *args, **kwargs):
+  print(f"제목: {title}")
+  print("내용:", end=" ")
+  for arg in args:
+    print(arg, end = " ")
+  print()
+  print("추가 정보:")
+  for key, value in kwargs.items():
+    print(f"{key}: {value}")
+profile("프로필", "취미", "좋아하는 음식", name = "김철수", age = 30, city = "서울"
 
