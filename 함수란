@@ -83,9 +83,9 @@ print_info(name="김철수", age = 30, city = "서울")
 
 def profile(title, *args, **kwargs):
   print(f"제목: {title}")
-  print("내용:", end=" ")
+  print("내용:", end=" ")   # end = " " 공백 생성
   for arg in args:
-    print(arg, end = " ")
+    print(arg, end = " ")   #출력 : 취미 좋아하는 음식
   print()
   print("추가 정보:")
   for key, value in kwargs.items():
