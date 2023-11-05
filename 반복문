@@ -1,0 +1,164 @@
+# for 문
+for i in range(1, 11):
+  print(i)
+
+fruits = ["사과", "바나나", "포도"]
+for fruit in fruits:
+  print(fruit)
+
+text = "파이썬"
+for character in text:
+  print(character)
+#출력 : 
+파
+이
+썬
+---------------------------------------------
+names = ["철수", "영희", "민수", "수지"]
+for idx, name in enumerate(names):  #enumerate 함수를 사용하여 리스트 names의 요소를 반복. (idx와 enumerate는 세트)
+  print(idx, name)
+--------------------------------------------- 
+1부터 100까지의 숫자 중 3의 배수만 출력
+for i in range(1,101):
+  if i % 3 == 0:
+    print(i)
+---------------------------------------------
+1부터 100까지의 숫자 중 5의 배수의 합
+sum = 0
+for i in range (1,101):
+    if i % 5 == 0:
+      sum += i
+print(sum)
+---------------------------------------------
+1부터 100까지의 숫자 중 3과 5의 공배수의 합
+sum = 0
+for i in range(1,101):
+  if i % 3 == 0 and i % 5 == 0:
+    sum += i
+print(sum) 
+---------------------------------------------
+1부터 입력한 숫자까지의 합                 ################### for i in range(3) =>0,1,2  ///// for i in range(1,a+1) => 1,2,...,a
+a = int(input("숫자를 입력해주세요"))
+sum = 0
+for i in range (1, a+1):
+  sum += i
+print(sum)
+---------------------------------------------
+입력한 숫자의 약수
+a = int(input("숫자를 입력해 주세요"))
+for i in range(1,a+1):
+  if a % i == 0:
+    print(i)
+---------------------------------------------
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 리스트에서 최대값, 최소값, 평균
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+max_num = numbers[0]   #numbers의 첫번째 요소
+min_num = numbers[0]
+sum = 0
+for num in numbers:
+  if num > max_num:
+    max_num = num
+  if num < min_num:
+    min_num = num
+  sum += num
+average = sum / len(numbers)
+
+print("최대값:", max_num)
+print("최소값:", min_num)
+print("평균:", average)
+-----------------------------------------------
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 리스트에서 중복된 숫자를 제거
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 
+unique_numbers = []
+for num in numbers:
+    if num not in unique_numbers:           ##### not in : 중복이 제거된 고유의 숫자만 기록
+        unique_numbers.append(num)
+print(unique_numbers)
+-----------------------------------------------
+"hello world"에서 각 문자의 개수
+string = "hello world"
+char_count = {}
+for char in string:
+  if char in char_count:
+    char_count[char] += 1  #char_count 딕셔너리에 존재하면 char의 듣장 횟수를 기록
+  else:
+    char_count[char] = 1  #char가 이미 char_count에 존재 안하면, 이 문자가 처음 등장 했음을 나타냄 ### space bar
+print(char_count)
+# 출력 : 'h':1, 'e':1, 'l':3, 'o':2, '':1, 'w':1, 'r':1, 'd':1
+-----------------------------------------------
+#while 문
+1부터 n 까지의 수 중 짝수
+n = int(input("숫자를 입력하세요: "))
+count = 1     #1부터 시작
+while count <= n:
+  if count % 2 == 0:
+    print(count)
+  count += 1   # count 값 계속 증가하는
+-----------------------------------------------
+구구단 중 사용자가 입력한 단을 출력
+a = int(input("숫자를 입력해 주세요"))
+b = 1
+while b < 10:
+  print(f'{a} * {b} = {a * b}')           ########## 여기 앞에다가 b += 1 하면 2부터 10까지 카운트함 reason, 출력후 카운트하기 떄문
+  b += 1    
+-----------------------------------------------
+사용자가 'q'를 입력할 때까지 이름을 받기
+while True:
+  name = input("이름을 입력하세요 (종료하려면 'q'를 입력하세요): ")
+  if name == 'q':
+    break
+  print(f'안녕하세요, {name}님!')
+# 출력 : 입력(James) / 안녕하세요, James님!
+# 출력 : 입력(q) /  (종료됨)
+-----------------------------------------------
+1 부터 10까지의 제곱
+a = 1
+while a <= 10:
+  print(f"{a} ^ {2} = {a**2}")
+  a += 1
+----------------------------------------------
+*별로 피라미드를 만드세요
+a = 5
+count = 1
+while count <= a:
+  print(" " * (a-count) + "*" * (2 * count -1))  #앞에는 공백 뒤에는 * 개수 / * 1개에 * 별 개수 추가 #### +를 사용 하면 *과 +를 계속 써야함 but *는 4번 반복 생산해서 보다 직관적
+  count += 1
+----------------------------------------------
+#for 중첩
+for i in range(2, 10):
+  for j in range(1, 10):
+    print(f"{i} * {j} = {i*j}")
+  print() #그냥 빈 줄 출력 {j} 끝나고 보기 편하게 만들라고
+----------------------------------------------
+#while 중첩
+i = 2
+while i < 10:
+  j = 1
+  while j < 10:
+    print(f"{i} * {j} = {i * j}")
+    j += 1 
+  print()
+  i += 1
+----------------------------------------------
+#제어문 : break, continue, pass
+#break:  반복문을 즉시 종료 후 다음 코드로 넘어감
+n = 1
+while True:
+  if n > 10:
+    break
+  print(n)
+  n += 1 
+
+#continue: 현재 실행 중인 반복문의 나머지 부분을 건너뛰고 다음 반복으로 진행
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+#출력 : 1, 2, 4, 5
+
+#pass: 아무런 동작을 하지 않는다. 그냥 지나가게 됨
+for i in range(1, 6):
+    if i == 3:
+        pass
+    print(i)
+#출력 : 1, 2, 3, 4, 5
