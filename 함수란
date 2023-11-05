@@ -28,6 +28,18 @@ result = name_and_age()
 print(result)
 #출력 : ('Alice', '20') 
 ---------------------------------------
+def greeting(name, greeting_message="안녕하세요"):
+  print(f"{greeting_message},{name}님!")
+greeting("김철수","반갑습니다")
+greeting("이영희")
+#출력 : 반갑습니다, 김철수님!
+#출력 : 안녕하세요, 이영희님!
+
+def greet(name, greeting="Hello"):
+  print(greeting, name)
+greet(greeting="Hi", name="Alice")
+# 출력 : Hi Alice
+---------------------------------------
 def factorial(n):
   if n == 1:
     return 1
@@ -36,6 +48,15 @@ def factorial(n):
 result = factorial(5)
 print(result)
 #출력 : 120
+---------------------------------------
+# 가변인자
+def sum_numbers(*args):
+  total = 0
+  for number in args:
+    total += number
+  return total
+result = sum_numbers(1, 2, 3, 4, 5)
+print(result)
 ---------------------------------------
 count = 0
 def increment():
