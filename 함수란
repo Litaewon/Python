@@ -91,4 +91,11 @@ def profile(title, *args, **kwargs):
   for key, value in kwargs.items():
     print(f"{key}: {value}")
 profile("프로필", "취미", "좋아하는 음식", name = "김철수", age = 30, city = "서울"
+#출력 :
+제목 : 프로필
+내용 : 취미 좋아하는 음식
+추가정보 :
+name : 김철수
+age : 30
+city : 서울
 
