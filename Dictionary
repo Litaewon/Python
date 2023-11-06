@@ -1,0 +1,91 @@
+# Python Dictionary는 {key : value}
+dictionary(순서가 없다) VS list
+
+
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+numbers = {1: 'one', 2: 'two', 3: 'three'}
+
+person = dict(name='John Doe', age=30, city='Seoul')
+print(person)
+{'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+-----------------------------------------------------------------------
+#zip() - 여러 개의 리스트를 같은 위치에 있는 요소끼리 묶어서 튜플 리스트
+keys = ['name', 'age', 'city']
+values = ['John Doe', 30, 'Seoul']
+person = dict(zip(keys, values))
+print(person)
+{'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+------------------------------------------------------------------------
+# dictionary name [key] = value 로 새로운 요소를 추가
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+person['gender'] = 'Male'
+print(person)
+{'name': 'John Doe', 'age': 30, 'city': 'Seoul', 'gender': 'Male'}
+
+# dictionary name [key] = value 로 요소 변경
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+person['age'] = 31
+print(person)
+{'name': 'John Doe', 'age': 31, 'city': 'Seoul'}
+--------------------------------------------------------------------------
+#dictionary name [key] => value 찾기
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+print(person['name'])
+'John Doe'
+--------------------------------------------------------------------------
+# get()메서드 / get()메서드는 요소가 없는 경우 None으로 변환
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+print(person.get('gender'))
+None
+--------------------------------------------------------------------------
+# pop()메서드 / 요소 제거
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+person.pop('age')
+print(person)
+{'name': 'John Doe', 'city': 'Seoul'}
+
+# del dictionary name [key] / 요소 제거
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+del person['age']
+print(person)
+{'name': 'John Doe', 'city': 'Seoul'}
+
+# clear() 메서드 - 모든 요소 제거
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+person.clear()
+print(person)
+{}
+---------------------------------------------------------------------------
+# dictionary key 가져오기
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+print(person.keys())
+dict_keys(['name', 'age', 'city'])
+
+# dictionary value 가져오기
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+print(person.values())
+dict_values(['John Doe', 30, 'Seoul'])
+--------------------------------------------------------------------------
+#중첩 dictionary 
+person = {'name': 'John Doe', 'age': 30, 'address': {'street': '123 Main St', 'city': 'Seoul', 'zip': 123456}}
+print(person)
+{'name': 'John Doe', 'age': 30, 'address': {'street': '123 Main St', 'city': 'Seoul', 'zip': 123456}}
+
+# 반복문을 이용한 dictionary key와 value 동시 처리
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+for key,value in person.items():
+	print(f"{key}: {value}")
+
+name: John Doe
+age: 30
+city: Seoul
+-----------------------------------------------------------------------------
+# 조건문을 이용한 딕셔너리 특정 키 존재 확인
+person = {'name': 'John Doe', 'age': 30, 'city': 'Seoul'}
+if 'age' in person:
+ print("Key 'age' exists in the dictionary.")
+else:
+ print("Key 'age' does not exist in the dictionary.")
+
+"Key 'age' exists in the dictionary."
+
