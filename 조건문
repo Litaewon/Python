@@ -1,0 +1,69 @@
+# 조건문 - True or False
+if 문 / if-else 문 / if-elif-else 문
+
+x = 0
+if x > 0:
+    print("양수입니다")
+elif x == 0:
+    print("0입니다")
+else:
+    print("음수입니다")
+-------------------------------------------------
+fruits = ["apple", "banana", "cherry"]
+
+if "apple" in fruits:
+    print("apple is in the fruits list")
+else:
+    print("apple is not in the fruits list")
+--------------------------------------------------
+numbers = [1, 2, 3, 4, 5]
+
+if 6 in numbers:
+    print("6 is in the numbers list")
+elif 7 in numbers:
+    print("7 is in the numbers list")
+else:
+    print("6 and 7 are not in the numbers list")
+--------------------------------------------------
+# 양수 : "양수입니다." 음수: 음수입니다.
+num = int(input("숫자를 입력해주세요: "))
+if num > 0:
+  print("양수입니다.")
+elif num == 0:
+  print("0 입니다")
+else: 
+  print("음수 입니다.")
+--------------------------------------------------
+# 짝수, 홀수
+num = int(input("숫자를 입력해주세요: "))
+if num % 2 == 0:
+  print("짝수입니다.")
+else: 
+  print("홀수입니다.")
+--------------------------------------------------
+num = int(input("숫자를 입력해주세요: "))
+if num % 2 == 0 or num % 3 == 0:
+  print("2의 배수이거나 3의 배수입니다.")
+else:
+  print("2의 배수도 아니고, 3의 배수도 아닙니다.")
+--------------------------------------------------
+a = int(input("1, 2, 3 중 숫자를 입력해주세요: "))
+num = (1, 2, 3)
+if a == max(num):
+  print("가장 큰 수입니다.")
+else:
+  print("가장 큰 수가 아닙니다.")
+--------------------------------------------------
+point = int(input("숫자를 입력해주세요"))
+if point > 90:
+  print("A")
+if point >= 80 and point < 90:
+  print("B")
+if point >= 70 and point < 80:
+  print("C")
+if point >= 60 and point < 70:
+  print("D")
+else:
+  print("F")
+
+
