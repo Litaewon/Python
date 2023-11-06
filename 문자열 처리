@@ -1,0 +1,114 @@
+# 연산, 인덱싱, 슬라이싱, 메서드
+
+#문자열 in 키워드: 특정 문자열이 있는지 확인 가능
+s = "Hellow World"
+result = "World" in s 
+print(result)
+#출력 : True
+----------------------------------------------------
+#문자열 인덱싱
+s = "Hellow World"
+c = s[0]
+print(c)
+#출력 : H
+
+#문자열 슬라이싱
+s = "Hello World"
+sub_s = s[6:]
+print(sub_s)
+#출력 : "World"
+-------------------------------------------------
+#문자열 메서드 - 문자열 분리
+s = "Hello World"
+l = s.split()
+print(l)
+['Hello', 'World']
+
+s = "Hello, World"
+l = s.split(',')
+print(l)
+['Hello', ' World']
+
+#문자열 찾기
+s = "Hello World"
+pos = s.find("World")
+print(pos)
+6
+--------------------------------------------------
+#문자열 치환
+s = "Hello World"
+new_s = s.replace("World", "Python")
+print(new_s)
+"Hello Python"
+------------------------------------------------------
+#문자열 대소문자 변환
+s = "Hello World"
+new_s = s.upper()
+print(new_s)
+"HELLO WORLD"
+-----------------------------------------------------
+#문자열 검사 - 모두 숫자인지 검사
+s = "1234"
+result = s.isdigit()
+print(result)
+True
+
+#알파벳
+s = "Hello"
+result = s.isalpha()
+print(result)
+True
+
+#알파벳 + 숫자
+s = "Hello123"
+result = s.isalnum()
+print(result)
+True
+
+#공백 문자열인지
+s = "  "
+result = s.isspace()
+print(result)
+True
+------------------------------------------------------
+#문자열 리스트 변환
+s = "Hello World"
+lst = list(s)
+print(lst)
+['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd']
+
+#튜플 변환
+s = "Hello World"
+tup = tuple(s)
+print(tup)
+('H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd')
+------------------------------------------------------
+#특정 문자열 삭제
+>>> s = "Hello World"
+>>> new_s = s.replace("Hello ", "")
+>>> print(new_s)
+"World"
+
+#문자열에서 앞 뒤 공백 제거
+>>> s = " Hello World "
+>>> new_s = s.strip()
+>>> print(new_s)
+"Hello World"
+
+#문자열에서 특정 문자열을 추출
+>>> s = "Hello World"
+>>> sub_s = s[6:]
+>>> print(sub_s)
+"World"
+
+#문자열을 정렬 - sort() 함수를 사용. // 알파벳 숫서대로 정렬
+s = "Hello World"
+new_s = ''.join(sorted(s))
+print(new_s)
+" HWdellloor"
+
+
+
+
+
+
