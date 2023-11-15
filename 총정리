@@ -1,0 +1,7 @@
+import numpy as np   VS   from numpy import arange
+
+쥬피터 .ipynb : block형식으로 편함 but, 느림 =>.py로 다운로드 산업적 활용 굳
+
+모듈: .py, .cpp
+라이브러리&패키지: Numpy, Pandas, Matplotlib
+프레임 워크: Pytorch, Tensorflow, Keras
