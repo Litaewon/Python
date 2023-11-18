@@ -1,0 +1,62 @@
+1.
+''.join(list2) : 리스트의 문자, 문자열 -> 문자열로 변환
+arr = ['가', '나', '다']
+str = ''.join(arr)
+print(str)
+# 가나다 
+
+'구분자'.join : 다양한 문자열을 만들 수 있음
+arr = ['가','나','다']
+str2 = ','.join(arr)
+print(str2)
+# 가, 나, 다
+str3 = '\n'.join(arr)
+print(str3)
+# 가
+나
+다
+
+리스트에 숫자가 있는 경우 : str(s) for s in list2
+arr = [1, 2, 3]
+str2 = ','.join(str(s) for s in arr) 
+print(str2)
+# 1, 2, 3
+
+2. Python for 반복문을 이용한 리스트 변환
+리스트에 문자열만 있는 경우
+arr = ['가', '나', '다']
+str = ''
+for s in arr: 
+  str += s
+print(str)
+# 가나다
+
+리스트에 문자와 숫자가 섞여있는 겨우 
+def convertString(arr):
+  str_result = ""
+  for s in arr:
+    atr_result += str(s)
+  return str_result
+
+arr = [1, 2, 3, "가"]
+str = convertString(arr)
+print(str)
+#123가
+
+for 반복문 + 구분자를 이용해서 문자열로 변환 시 특별한 처리를 하고 싶은 경우
+def convertSting (arr, sep):
+  str_result = ""
+  for index, s in enumerate(arr):  # 인덱스, 값 한번에 받아오기
+    if index + 1 == len(arr):
+        str_result += str(s)       # 마지막 요소: 구분자 없이
+    else:
+        str_result += str(s) + sep
+  return str_result
+
+arr = [1, 2, 3, '가']
+str1 = convertString(arr,'')
+print(str1)
+# 123가
+str2 = converString(arr,',')
+print(str2)
+# 1,2,3,가
