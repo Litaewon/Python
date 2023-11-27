@@ -1,4 +1,9 @@
 int(input())
+
 map(int,input().split())
+
 list(map(int,input().split()))
+
 def x (given1, given2, given3)
+
+list = []
