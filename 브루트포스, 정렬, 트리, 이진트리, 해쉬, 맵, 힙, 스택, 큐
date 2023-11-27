@@ -1,0 +1,40 @@
+브루트포스: 모든 경우의 수를 다 해보는 기법 (순차탐색, 백트래킹, DFS, BFS)
+장점: 이론상 정확도 100%, 알고리즘 구현 쉬움
+단점: 문제 복잡도에 민감, 실행 시간(고), 메모리 효율면에 비효율
+
+
+정렬: 원소들 -> 규칙에 따라 열거
+
+트리: 전위순회(preorder), 중위순회(Inorder), 후위순회(Postoder), 레벨순회(Level-order)
+
+전위순회(NLR 방식)
+def preoder(self, n):
+    if n != None:
+        print(n.item,'',end='')             # 노드 방문
+        if n.left: self.preorder(n.left)    # 왼쪽 서브트리 순회
+        if n.right: self.preorder(n.right)  # 오른쪽 서브트리 순회
+
+중위순회(LNR 방식)
+def inorder(self, n):
+    if n != None:
+        if n.left: self.inorder(n.left)
+        print(n.item, '', end='')
+        if n.right: self.inorder(n.right)
+
+후위순회(LRN 방식)
+def postorder(self, n):
+    if n != None:
+        if n.left: self.postorder(n.left)
+        if n.right: self.postorder(n.right)
+        print(n.item, '', end='')
+
+레벨순회
+def levelorder(self, root):
+    q = []
+    q.append(root)
+    while q:
+        t = q.pop(0)
+        print(n.item,'',end='')                 # q에서 첫 항목을 삭제하고 삭제한 노드 방문
+        if n.left != None: q.append(t.left)     # 왼쪽 자식 큐에 삽입
+        if n.right != None: q.append(t.right)   # 오른쪽 자식 큐에 삽입
+
