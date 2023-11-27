@@ -127,7 +127,7 @@ print(a)
 a = ['1', '2', '3']
 a.append(10)
 a.pop()
-
+---------------------------------------------------------------------------------------------------------------------
 2. 파이썬 리스트를 특정 값 확인 (in, not in)
 s = [ 1, 2, 3, 4, 5]
 print('a' in s)
@@ -135,11 +135,6 @@ print('1' in s)
 # False
 True
 
-if 'a' in s:
-  print('...1')
-else:
-  print('...2')
-# ...2
 
 3.파이썬 리스트 생성 range 이용 (컴프리헨션)  range(a,b)는 a 부터 b-1 다 가져오는 것
 a = list()
@@ -154,10 +149,23 @@ a = [x for x in range(0, 10) if x % 2 ==0 ]
 print(a)
 
 4. 파이썬 리스트 중복 값 제거 방법
-a = ['a', 'b', 'c', 'c', 1, 1, 2, 3, 4]
 b = set(a)
-print(b)
-# ['a', 'b', 'c', 1, 2, 3, 4]
+
+
+-----------------------------------------------------
+# 백준 10811번 https://www.acmicpc.net/problem/10811
+# 바구니 번호 N번, M번 바구니 순서 역순 만들거 !
+N, M = map(int,input().split())
+
+lists = [i for i in range(1,N+1)]
+
+for i in range(M):
+    i,j = map(int,input().split())
+    temp = lists[i-1:j]
+    temp.reverse()
+    lists[i-1:j] = temp
+for i in range(N):
+    print(lists[i],end = ' ')
 
 
 
