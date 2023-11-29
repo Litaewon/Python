@@ -29,6 +29,115 @@ print(f'{data}')
 
 Block (indent 들여쓰기) 
 
+if a > = 30:
+    pass
+else: 
 
+scroe = 85 
+1) result = "sccess" if score >= 80 else "fail"
+2) if score >= 80: result = "Success"
+
+while 함수
+i = 1
+result = 0
+while i <= 9:
+  if i % 2 == 1:
+    result += i
+  i += 1
+while 무한 루프
+x = 10
+while x>5:
+  break
+  print(x)
+
+for 문 (리스트나 튜플에서 많이 사용됨)
+for i in range(1, 10):
+  if i % 2 == 0:           -> i가 2의 배수이면 건너 뛰고 다 더해라
+    continue
+  result += i
+
+scores = [40, 50 , 60, 70, 80]
+cheating_student_list = {2,4}
+for i in range(5):
+  if i + 1 in cheating_student_list:
+    continue
+  if scores[i] >= 80:
+    print(i + 1, "번 학생은 합격입니다."
+이중 for 문
+for i in range (2, 10):
+  for j in range(1,10):
+    print(i, "X", j, "=", i * j)
+
+함수 - 작업을 하나 단위로 묶어두는 것 (내장 함수 & 사용자 정의 함수)
+-매개변수 : 함수 내부에서 사용할 변수
+-반환 갑시 함수에서 처리 된 결과를 반환
+def add(a,b):
+  return a + b
+print(add(3,4)
+
+a = 10   -> 사용하고자 한다면 global 키워드 사용
+def func():
+  global a   -> local로 사용한다면 a = 0   | global과 local 둘다 있으면 local를 참조함
+  a += 1
+for i in range(10):
+  func()
+
+def operator(a,b):
+  add_var = a + b
+  subtract_var = a - b
+  multiply_var = a * b
+  return add_var, subtract_var, multiply_var -> packing
+a, b, c = operator (7, 3) -> 반환된 값들 차례대로 넣는게 unpacking a= add_var, b=subtract_var, c=multiply_var
+
+print((lambda a, b: a+b)(3,7)) -> (lambda 매개변수: 반환값)(값)
+
+리스트 내 튜플형태로 있을때.
+def my_key(x):
+  return x[1] -> 두번째 원소를 불러오고
+print(sorted(array, key=my_key))-> 두번쨰 원소기준 정리
+또는
+print(sorted(array, key=lambda x: x[1]))
+
+list1 = [1,2,3,4,5]
+list2 = [6,7,8,9,10]
+result = map(lambda a, b: a + b, list1, list2)
+
+libraries - 내장함수/ itertools(순열, 조합라이브러리) / heapq(우선순위 큐) / bisect(이진 탑색) / collections(덱,deque/카운터,counter) / math (!,제곱근,최대공약수(GCD),삼각함수,파이)
+sum(), min(), max(), eval()->글자를 수로 구해냄, sorted([], reverse=True) | result = sorted(array, key=lambda x: x[1], reverse=True)
+순열: 일렬로 나열 ABC
+from itertools import permutations
+a = [1,2,3,4,5]
+reult = list(permutations(a, 5) 
+조합: 순서 상관없이 몇개만 뽑기
+from itertools import combination
+result = list(combinations(data,3))
+중복순열 -> 중복 허용
+from itertools import product
+result = list(product(Data, repeat=2))
+중복조합 -> 중복 허용
+from itertools import combinations_with_replacement
+result = list(combinations_with_replacement(data,2))
+내부 원소 등장 횟수
+from collections import Counter
+counter = Counter([1,2,3,1,1,2,3])
+print(counter[1])
+print(counter[2])
+print(dict(counter)) -> 사전 자료형으로 보여줌
+최대공약수 (약수중 제일  큰거)
+import math
+gcd()
+최소공배수 (배수중 가장 작은 것 )
+def LCM(a,b):
+  return a*b // math.gcd(a,b)
+
+그리디(Greedy, 최적인 답 도출하자) & 구현 (진짜 손수 제작)
+DFS (Depth First Search)  & BFS (Breadth First Search, 너비로 진행)
+정렬 알고리즘
+이진탐색 
+다이나믹 프로그래밍
+최단 경로 알고리즘
+기타 그래프 이론
+코딩 테스트에서 자주 출제되는 기타 알고리즘
+개발형 코딩 테스트
 
 
