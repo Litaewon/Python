@@ -130,6 +130,14 @@ gcd()
 def LCM(a,b):
   return a*b // math.gcd(a,b)
 
+n = 1260
+count = 0
+array [500, 100, 50, 10]
+for coin in array:
+  count += n // coin  -> count에다가 n을 coin으로 나눈 값을 넣는다 500자리 2개 | 100자리 2개
+  n %= coin           ->  260 남음 | 60 남음
+
+
 그리디(Greedy, 최적인 답 도출하자) & 구현 (진짜 손수 제작)
 DFS (Depth First Search)  & BFS (Breadth First Search, 너비로 진행)
 정렬 알고리즘
