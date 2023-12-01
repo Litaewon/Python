@@ -81,7 +81,22 @@ for i in num_list:
 
 list의 n번째 부터 끝까지
 list[n-1:]
+n번째 까지
+list[:n]
 
+list안에서 "w" 는 +1 "s"는 -1 "d"는 +10 "a"는 -10
+def solution(n, control):
+    answer = 0
+    for i in control:
+        if  i == "w":
+            answer += 1
+        if  i == "s":
+            answer -= 1
+        if  i == "d":
+            answer += 10
+        if  i == "a":
+            answer -= 10
+    return answer
 
 
 
