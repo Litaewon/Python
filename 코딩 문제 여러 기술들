@@ -85,8 +85,9 @@ n번째 까지
 list[:n]
 
 list안에서 "w" 는 +1 "s"는 -1 "d"는 +10 "a"는 -10
+방법 1)
 def solution(n, control):
-    answer = 0
+    answer = n
     for i in control:
         if  i == "w":
             answer += 1
@@ -97,7 +98,15 @@ def solution(n, control):
         if  i == "a":
             answer -= 10
     return answer
+방법 2)
+def solution(control):
+  answer = ''
+  dic = {1:'w', -1:'s', 10:'d', -10:'a'}
 
+  for idx, val in enumerate(control):
+    if idx != len(control)-1:
+      answer += dic[control[idx+1] - control[idx]]
+  return answer
 
 
 
