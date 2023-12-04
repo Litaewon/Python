@@ -128,8 +128,23 @@ def solution(s):
     return True
   return False
 
+#배열 Given: arr=[2,3,7,4] divisor 5 => 배수만. 없으면 -1
+def solution(arr, divisor):
+    answer = []
+    for i in arr:
+        if i % divisor == 0:
+            answer.append(i)
+    answer.sort()
+    if len(answer) == 0 : answer.append(-1)
+    return answer
 
-
+#배열 Given: numbers= [1,2,3,4]  0~10중  numbers 뺀 elements들의 합.
+def solution(numbers):
+    answer = 0
+    for i in range(10):
+        if i not in numbers:
+            answer += i
+    return answer
 
 
 
