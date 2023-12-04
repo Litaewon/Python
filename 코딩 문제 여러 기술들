@@ -119,6 +119,15 @@ def solution(absolutes, signs):
   return answer
 
 
+Given: 'pPyYyyy'  ->  p&P 와 y&Y의 갯수 값으면 true 아니면 false
+import collections   -> import collections as Collect 
+def solution(s):
+  s = s.lower()
+  count = collections.Counter(s)
+  if count['p'] == count ['y']:
+    return True
+  return False
+
 
 
 
