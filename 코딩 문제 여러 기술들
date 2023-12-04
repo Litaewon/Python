@@ -108,5 +108,22 @@ def solution(control):
       answer += dic[control[idx+1] - control[idx]]
   return answer
 
+Given: absolutes=[1,2,3], signs=[ture, false, true]
+def solution(absolutes, signs):
+  answer = 0
+  for i in range (len(Absolutes)):
+    if sings[i]:                        => true면 더하고 false면 빼라
+      answer += absolutes[i]
+    else:
+      answer -= aboslutes[i]
+  return answer
+
+
+
+
+
+
+
+
 
 
