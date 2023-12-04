@@ -216,7 +216,7 @@ def solution(s):
 
 #계산 금액 - (가격 *횟수) ,단 회수에 따라 계산 달라짐 (가격 100원에 4번 타면: 100+200+300+400) -> 양수면 0 음수면 양수로 출력
 def solution(price, money, count):
-    answer = -1
+    answer = -1   -> 노상관 0으로 해도 됨
     need = 0
     for i in range (1,count+1):
         need += (i)*price
