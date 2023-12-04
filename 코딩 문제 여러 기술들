@@ -250,7 +250,7 @@ def solution(arr1, arr2):
 import numpy as np
 def solution(arr1, arr2):
     answer = [[]]
-    a = np.array(arr1)    -> 배열로 변환
+    a = np.array(arr1)    -> 배열로 변환 : 기존 튜플 (1,2,3)이나 리스트 [1,2,3]에서 ->   [1 2 3] 형태로
     b = np.array(arr2)
     answer = a + b
     return answer.tolist()    -> 배열을 다시 리스트로 변환
