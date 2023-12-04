@@ -205,4 +205,27 @@ def solution(left, right):
         count = 0
     return answer
 
+#문자 "Zbcdefg" -> 정렬 소문자 + 대문자 "gfedcbZ"
+def solution(s):
+    answer = ''
+    string = sorted(s)
+    string = string[::-1]   -> 리스트 역순
+    for s in string:        -> 결과 문자열에 추가
+        answer += s    
+    return answer
+
+#계산 금액 - (가격 *횟수) ,단 회수에 따라 계산 달라짐 (가격 100원에 4번 타면: 100+200+300+400) -> 양수면 0 음수면 양수로 출력
+def solution(price, money, count):
+    answer = -1
+    need = 0
+    for i in range (1,count+1):
+        need += (i)*price
+    if money >= need:
+        answer = 0
+    else:
+        answer = need - money
+    return answer
+
+
+
 
