@@ -146,8 +146,23 @@ def solution(numbers):
             answer += i
     return answer
 
+#숫자 Given: 핸드폰 번호 -> 뒤에 네자리 뺴고 *모양으로
+def solution(phone_number):
+    answer = ''
+    hide = '*'*(len(str(phone_number))-4)
+    answer = hide + phone_number[-4:]
+    return answer
 
-
+#배열 Given: lists = [1,2,3,4,] 1개이거나 아무것도 없으면 return -1
+def solution(arr):
+    answer = []
+    if len(arr)>1:
+        arr.remove(min(arr))
+    else:
+        arr.clear()
+        arr.append(-1)
+    answer = arr
+    return answer
 
 
 
