@@ -226,6 +226,16 @@ def solution(price, money, count):
         answer = need - money
     return answer
 
+#문자열  길이 4or6, 숫자만 있으면 Truse 단어 있으면 False
+def solution(s):
+    answer = True
+    
+    if len(s) == 4 or len(s) ==6:
+        if s.isdigit() == False:    - > .isdigit() 숫자로만 이루어 있지 않으면 false 나타냄
+            answer = False    
+    else:
+        answer = False     ->길이가 4 또는 6 이 아닐떄 false
+    return answer
 
 
 
