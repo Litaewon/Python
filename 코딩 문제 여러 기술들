@@ -261,5 +261,28 @@ np.에 자주 쓰이는 함수
 수학 : np.sum(array)/mean/median/std/max/min
 난수 생성: np.random.rand(shape)/radom.radn()/random.randint(low, high, size)
 
+#문자 n,m => n개의 별 n개의 줄
+n, m = map(int, input().strip().split(' '))
+print(('*'*n+"\n")*m)
 
+#계산 최대공약수 & 최소공배수
+import math
+def solution(n, m):
+    answer = [math.gcd(n,m),(n*m)/math.gcd(n,m)]
+    return answer
 
+#배열(스택/큐) Given: arr=[1,1,3,0,1,1] -> 같은 수 제거 [1,3,0,1]
+def solution(arr):
+    answer = [arr[0]]             ->첫번쨰 요소
+    for i in range(1,len(arr)):   ->2번쨰 요소 부터 끝까지
+        if arr[i] != arr[i-1]:    -> 다르면 추가해라
+            answer.append(arr[i])
+    return answer
+
+#계산 n -> 3진법 상에서 앞뒤로 뒤집은 후 이를 다시 10진법으로   # 3진법은 내장함수가 없음 #2진법 내장함수: bin(n)
+def solution(n):
+    answer = ''
+    while n > 0:             -> n이 0보다 클때까지 반복
+        n, r = divmod(n,3)   -> divmod(몫,나머지) -> 튜플 형식으로 보여줌
+        answer += str(r)
+    return int(answer,3)   -> 다시 10진법으로 바꿔주기
