@@ -34,4 +34,42 @@ lists.append(-1)
 for i in range(len(a))
   answer += a[i]*b[i]
 
+가장 많이 넣는 법... 가장 작은 수부터 더하면 가장 많이 넣을 수 있다.
+d.sort()
+for i in d:
+  if i <= budget:
+    budget -= i      -> budget값을 줄여나가면 새로들어오는 i값이 초과 하는지 알수 있음.
+    answer += i      -> 이전까지 추가된 i는 모두 더해라
+  else:
+    break
+
+
+answer = [[]]            -> 2차원 리스트로 초기화
+a = np.array(arr1)       -> 리스트를 변수로 받음
+b = np.array(arr2)
+answer = a + b
+return answer.tolist()   -> 리스트를 -> 리스트로 변환
+
+
+answer = [arr[0]]              -> arr리스트의 처음 값이 기본 초기값
+for i in range(1,len(arr)):
+  if arr[i] != arr[i-1]:       -> 이전값과 다르면 arr리스트에 추가해라
+      answer.append(arr[i])
+
+배열중 랜덤 3개 합이 0이면 삼총사
+from itertools import combinations   -> 조합
+answer = sum([1 for i in list(combinations(lists,3)) if not sum(i)])   -> 합이 0인것들에 대해 1을 생산
+-> 3개를 선택하는 모든 조합을 리스트로 변환 -> 조합 하나당 1 생성 (i가 아닌)
+if not sum(i) 는  if sum(i) == 0 와 같은 의미
+
+
+리스트 최소 직사각형 Given: sizes (가로, 세로)
+answer = max(max(x) for x in sizes) * max(min(x) for x in sizes)
+-> max(가로)  *  max(세로)
+
+
+
+
+
+
 
