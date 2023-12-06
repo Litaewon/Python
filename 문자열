@@ -13,6 +13,7 @@ Given: n   숫자 -> 문자 - > 역배열 -> 숫자
 answer = int(''.join(sorted(str(n),reverse=True)) 
 
 s = s.lower()   -> 소문자 만들기
+s = s.upper()   -> 대문자 만들기
 
 import collections
 count = collections.Counter(s) -> count는 s내 횟수를 세는것
@@ -36,5 +37,32 @@ string = string[::-1]   -> 역순으로 정리
 for s in string:        ->>>>>>>>>>>>>>>>>>>>>>>>>>>> 이부분 해석
   answer += s
 
+s.isdigit() == False    -> 문자열에 숫자가 있으면 False 표시
+
+n, m = map(int,input().strip().split(' '))   -> .strip() 문자열 양 끝의 공백을 제고.
 
 
+s = s.split('')
+for word in s:
+        temp = ''
+        for i in range(len(word)):        -> 단어별로 이 기준으로 실행
+            if i % 2 == 0:                -> 짝수는 대문자
+                temp += word[i].upper()   
+            else:
+                temp += word[i].lower()    -> 나머지 소문자
+        answer.append(temp)                -> answer에 temp 규칙 넣기
+    return ' '.join(answer)                -> 문자열들을 결합. "" "" "" 기준으로 띄어서 결합해줌
+
+문자열[0]부터 쭉 p의 갯수만큼 나눠서 p의 크기와 비교 작거나 같은거만 출력
+answer = len([t[i:i+len(p)] for i in range (len(t)-len(p)+1)if int(t[i:i+len(p)])<=int(p)])
+[t 문자열의 i부터 i+len(p)까지]길이 for i in range (t문자열 길이 - p길이 +1) if int(t열에서 p까지의 길이) <= int(p)값인거 다 보여줘
+
+시저 암호
+Given 문자열 s, 숫자 n
+    s = list(s)
+    for i in range(len(s)):
+        if s[i].isupper():           -> 대문자이면
+            s[i] = chr((ord(s[i]) - ord('A') + n) % 26 + ord('A'))   -> ord('A') 65 내장함수로 문자에 해당하는 숫자 반환
+        elif s[i].islower():
+            s[i] = chr((ord(s[i]) - ord('a') + n) % 26 + ord('a'))
+    answer = "".join(s)
