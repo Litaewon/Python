@@ -15,3 +15,18 @@ for i in range (left, right + 1):
     count = 0
 
 
+최대공약수: math.gcd(n,m)
+최소공배수: [math.gcd(n,m),(n*m)/math.gdc(n,m)]
+
+Given : n
+answer = ''
+while n > 0:
+  n,r = divmod(n,3)    -> n을 3을 나눈 몫과 나머지 17/3=5...2  -> 5/3=1...2  따라서 122(3)
+  answer += str(r)
+return int(answer,3)   -> 10진수로 변환 및 반환
+
+##
+n, remainder = divmode(n,2)  -> 17/2 =8..1  -> 8/2 = 4..0 -> 4/2 = 2..0 ->2/2= 1..0  따라서 10001(2)
+ternary_result = str(remainder) + ternary_result
+
+
